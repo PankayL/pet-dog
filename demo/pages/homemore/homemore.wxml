@@ -1,0 +1,35 @@
+<!--pages/homemore/homemore.wxml-->
+<navigation-bar title="领 养 圈" back="{{true}}" color="white" background="#FF69B4" style="position:{{isNavBarFixed}}; z-index: 1000; width: 100%;"></navigation-bar>
+<div wx:if="{{isPlaceholder}}" style="height: 85px; color: #FF69B4;"></div>
+
+<!-- 搜索框 -->
+<view style="width: 100%; height: 60px; background-color: rgba(255, 255, 255, 0.5); display: flex; flex-direction: column; justify-content: center;">
+    <view style="height: 1px;"></view>
+    <view class="search-container" style="background-color: rgba(245, 248, 255, 0.5); margin-left: 20px;">
+        <image class="search-icon" src="{{searchImageUral}}"></image>
+        <input class="search-input" placeholder="查找" bindinput="onInput" />
+        <!-- <image class="search-icon" src="/images/search-icon.png" /> -->
+        <image style="width: 18px; height: 18px;" class="search-icon" src="{{addImageUral}}" bind:tap="goSeekAdd"></image>
+    </view>
+    <view style="height: 1px;"></view>
+</view>
+
+<!-- pages/lost-dogs/lost-dogs.wxml -->
+<view class="card-container">
+  <block wx:for="{{adoptdogs}}" wx:key="index">
+    <view class="card">
+      <image class="card-image" src="{{item.imgUrl}}" mode="aspectFill" />
+      <view class="card-content">
+        <text class="card-title">{{item.title}}</text>
+        <text class="card-description">{{item.description}}</text>
+        <text class="card-location">地点：{{item.location}}</text>
+        <text class="card-contact">联系方式：{{item.contact}}</text>
+      </view>
+    </view>
+  </block>
+
+  <view style="height: 100rpx;"></view>
+</view>
+
+
+

@@ -1,0 +1,183 @@
+/* pages/hometips/hometips.wxss */
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #F8F8F8;
+  /* 设置页面的背景颜色 */
+  overflow-x: hidden;
+}
+
+/* 页面容器 */
+.container {
+  padding: 20px;
+  /* 外边距 */
+  background-color: #f7f7f7;
+  /* 柔和的背景色 */
+  text-align: center;
+}
+
+/* 页眉样式 */
+.header {
+  border-bottom: 1px solid #ddd;
+  /* 较厚的分隔线 */
+  width: 100%;
+  padding-bottom: 0px;
+  /* 增加下边距 */
+  margin-bottom: 10px;
+  /* 增加与正文的间距 */
+}
+
+.title {
+  font-size: 20px;
+  /* 较大的字体 */
+  font-weight: bold;
+  color: #333;
+  /* 深色字体 */
+}
+
+.info-container {
+  display: flex;
+  /* 使用 Flex 布局 */
+  justify-content: space-between;
+  /* 元素分布在左右两边 */
+  align-items: center;
+  /* 垂直居中对齐 */
+  padding: 10px;
+  /* 给容器添加适当的内边距 */
+}
+
+.info {
+  font-size: 12px;
+  /* 较小的字体 */
+  color: #666;
+  /* 中性色彩 */
+  margin-left: 20rpx;
+  margin-right: 55rpx;
+}
+
+.content {
+  padding: 0rpx;
+  width: 90%;
+  margin-top: -35rpx;
+  margin-left: 45rpx;
+  line-height: 1.8;
+}
+
+.textword {
+  margin-top: -20rpx;
+  font-size: 14px;
+}
+
+
+
+/* 一级标题样式 */
+/* .h1 {
+    font-size: 24px; 
+    font-weight: bold;
+    margin: 30px 0; 
+    text-align: center; 
+    color: #000; 
+  } */
+
+/* 二级标题样式 */
+.h2 {
+  font-size: 18px;
+  margin-left: 0;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #444;
+}
+
+/* .h2::before,
+  .h2::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 20%;
+    background-color: #ddd;
+    top: 50%;
+    transform: translateY(-50%);
+  } */
+
+/* .h2::before {
+    left: 0;
+  }
+  
+  .h2::after {
+    right: 0;
+  } */
+
+/* 三级标题样式 */
+.h3 {
+  font-size: 18px;
+  /* 三级标题 */
+  font-weight: bold;
+  margin: 20px 0;
+  /* 段前段后间隔 */
+  text-align: center;
+  /* 三级标题居中 */
+  color: #444;
+  /* 深色 */
+}
+
+/* 段落样式 */
+.text {
+  margin: 30px 0;
+  /* 1.5倍的段前段后间隔 */
+}
+
+/* 图像样式 */
+.image {
+  /* margin: 10px -10px 0 */
+  margin-left: -10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  max-width: 100%;
+  /* 确保图像不超出容器 */
+  width: 300px;
+  border-radius: 6px;
+  /* 圆角 */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  /* 阴影效果 */
+  /* display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; */
+  display: inline-block;
+}
+
+/* 输入框 */
+.input-container {
+  position: fixed;
+  /* 固定在屏幕底部 */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #f8f8f8;
+  padding: 10px;
+  display: flex;
+  transition: margin-bottom 3s;
+}
+
+.chat-input {
+  flex: 1;
+  /* 占用大部分空间 */
+  padding: 5px;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+}
+
+.send-button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #007aff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}

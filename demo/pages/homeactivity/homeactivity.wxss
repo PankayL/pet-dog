@@ -1,0 +1,8 @@
+/* pages/homeactivity/homeactivity.wxss */
+page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #F8F8F8; /* 设置页面的背景颜色 */
+    overflow-x: hidden;
+  }

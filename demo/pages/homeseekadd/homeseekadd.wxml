@@ -1,0 +1,39 @@
+<!--pages/homeseekadd/homeseekadd.wxml-->
+<navigation-bar title="寻 宠" back="{{true}}" color="white" background="#FF69B4" style="position:{{isNavBarFixed}}; z-index: 1000; width: 100%;"></navigation-bar>
+<!-- <div wx:if="{{isPlaceholder}}" style="height: 85px; color: #FF69B4;"></div> -->
+
+<view class="container">
+  <block>
+    <view class="img-wrap" style="margin-top: 60rpx;">
+      <view class="one-image" wx:for="{{list}}" wx:key="index">
+        <image src="{{item}}" show-menu-by-longpress="true" mode="widthFix" class="img-choose" bind:tap="scanImage" data-src="{{item}}"></image>
+        <image src="/icon/trend/delete.png" class="img-delete" data-src="{{item}}" bindtap="deleteImages"></image>
+      </view>
+      <view wx:if="{{flag}}" class="one-image">
+        <image src="/icon/trend/add.png" class="img-choose" bind:tap="chooseImage"></image>
+      </view>
+    </view>
+  </block>
+
+  <view style="margin-top: 50rpx;" class="form-group">
+    <label>标题</label>
+    <input style="width: 500rpx; height: 15px;" type="text" placeholder="点击输入标题" bindinput="onInputTitle" />
+  </view>
+
+  <view style="margin-top: 20rpx;" class="form-group">
+    <label>描述</label>
+    <input style="width: 500rpx; height: 15px;" placeholder="点击输入描述" bindinput="onInputDescription" name="" id="" cols="30" row="10" maxlength="-1"></input>
+  </view>
+
+  <view style="margin-top: 20rpx;" class="form-group">
+    <label>地点</label>
+    <input style="width: 500rpx; height: 15px;" type="text" placeholder="点击输入地点" bindinput="onInputLocation" />
+  </view>
+
+  <view style="margin-top: 20rpx;" class="form-group">
+    <label>电话</label>
+    <input style="width: 500rpx; height: 15px;" type="text" placeholder="点击输入联系电话" bindinput="onInputPhone" />
+  </view>
+
+  <button style="margin-top: 50rpx;" type="primary" bindtap="submitForm">提交</button>
+</view>

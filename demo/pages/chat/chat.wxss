@@ -1,0 +1,116 @@
+/* pages/chat/chat.wxss */
+page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #F8F8F8; /* 设置页面的背景颜色 */
+    overflow-x: hidden;
+  }
+/* 
+The uppermost region
+ */
+ .top-container {
+    /* 设置轮播图所在区域的背景渐变颜色，从上到下 */
+    background: linear-gradient(to bottom, #F273FE, #F8F8F8);
+    /* background: linear-gradient(to bottom, #FF69B4, #EECDA3); */
+    height: 750rpx;
+    margin: -1px;
+    position: relative; /* 必要，以便设置 z-index 生效 */
+  }
+  /* 
+search box
+ */
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #FFF;
+    padding: 8px;
+    border-radius: 15px;
+    margin: 15px;
+    height: 15px;
+    width: 86%;
+  }
+  .search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    margin-left: 15px;
+    margin-right: 8px;
+  }
+  .search-icon {
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+  }
+  /* 页面样式 */
+  .container {
+      /* 设置轮播图所在区域的背景渐变颜色，从上到下 */
+    background: linear-gradient(to bottom, #F273FE, #F8F8F8);
+    /* background: linear-gradient(to bottom, #FF69B4, #EECDA3); */
+    height: 500rpx;
+    margin: -1px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 100vw;   /* 设置宽度为视口宽度 */
+    height: 100vh;  /* 设置高度为视口高度 */
+    margin: 0;      /* 移除默认的外边距 */
+    padding: 0;     /* 移除默认的内边距 */
+  }
+  
+  .message-list {
+    flex: 1;
+    overflow: auto;
+  }
+  
+  .message-item {
+    display: flex;
+    padding: 10px;
+    width: 100vw;
+    height: 5.9vh;
+    background-color: rgba(255, 255, 255, 0.5);
+
+  }
+  
+  .avatar {
+    width: 45px;
+    height: 45px;
+    background-color: #F4F4F4;
+    margin-left: 15px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .content {
+    flex: 1;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  
+  .name {
+    font-weight: normal;
+  }
+  
+  .time {
+    color: #999;
+    font-size: 12px;
+    margin-right: 15px;
+  }
+  
+  .message {
+    color: #666;
+    font-size: 12px;
+  }
+  /* 底图 */
+  .bottom-image {
+    position: fixed; /* 固定在底部 */
+    bottom: 0; /* 距离底部的距离，可以根据需求调整 */
+    left: 0; /* 如果需要固定在左侧，可以设置 left */
+    z-index: 1; /* 确保在其他内容之下 */
+    /* 其他样式属性 */
+}

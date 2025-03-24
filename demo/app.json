@@ -1,0 +1,93 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/hometips/hometips",
+    "pages/homescience/homescience",
+    "pages/homeseek/homeseek",
+    "pages/homeseekadd/homeseekadd",
+    "pages/homeactivity/homeactivity",
+    "pages/homeentertainment/homeentertainment",
+    "pages/homediscuss/homediscuss",
+    "pages/homemore/homemore",
+    "pages/shop/shop",
+    "pages/shoporder/shoporder",
+    "pages/shopclassify/shopclassify",
+    "pages/chat/chat",
+    "pages/chatpage/chatpage",
+    "pages/message/message",
+    "pages/trend/trend",
+    "pages/trendadd/trendadd",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/sign/sign"
+  ],
+  "window": {
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": true,
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "舒心宠居",
+    "backgroundTextStyle":"dark", 
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+      "borderStyle": "white",
+      "selectedColor": "#FF69B4",
+      "color": "#333",
+      "backgroundColor": "#FFF",
+      "position": "bottom",
+      "list": [
+          {
+            "pagePath": "pages/home/home",
+            "text": "首页",
+            "iconPath": "icon/navigation/home.jpg",
+            "selectedIconPath": "icon/navigation/selectedhome.jpg"
+          },
+          {
+            "pagePath": "pages/shop/shop",
+            "text": "商城",
+            "iconPath": "icon/navigation/shop.jpg",
+            "selectedIconPath": "icon/navigation/selectedshop.jpg"
+          },
+          {
+            "pagePath": "pages/chat/chat",
+            "text": "消息",
+            "iconPath": "icon/navigation/chat.png",
+            "selectedIconPath": "icon/navigation/selectedchat.png"
+          },
+          {
+            "pagePath": "pages/trend/trend",
+            "text": "动态",
+            "iconPath": "icon/navigation/trend.png",
+            "selectedIconPath": "icon/navigation/selectedtrend.png"
+          },
+          {
+            "pagePath": "pages/index/index",
+            "text": "我的",
+            "iconPath": "icon/navigation/me.png",
+            "selectedIconPath": "icon/navigation/selectedme.png"
+          }
+      ]
+  },
+  "style": "v2",
+  "rendererOptions": {
+    "skyline": {
+      "defaultDisplayBlock": true,
+      "disableABTest": true,
+      "sdkVersionBegin": "3.0.0",
+      "sdkVersionEnd": "15.255.255"
+    }
+  },
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "usingComponents": {
+      "van-icon": "@vant/weapp/icon/index",
+      "van-popup": "@vant/weapp/popup/index",
+      "van-area": "@vant/weapp/area/index"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "小程序需要您的位置信息以提供相关功能"
+    }
+  }
+}

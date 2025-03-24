@@ -1,0 +1,96 @@
+/* pages/homeseekadd/homeseekadd.wxss */
+page {
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  background-color: #F8F8F8;
+  /* 设置页面的背景颜色 */
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 20px;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #FFFFFF;
+  width: 750rpx;
+}
+
+
+.label {
+  width: 25%;
+  /* 调整标签的宽度，根据需要 */
+  font-weight: bold;
+}
+
+label {
+  margin-left: 40rpx;
+}
+
+input {
+  margin-left: 50rpx;
+  flex-grow: 1;
+  /* 输入框将填充剩余空间 */
+  padding: 10px;
+  border: 0px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  background-color: #007aff;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+.add-image {
+  width: 30%;
+  height: 150rpx;
+  background-color: #f0f0f0;
+}
+
+.list .item .onesimag {
+  margin: 0rpx 8rpx 0rpx 0rpx;
+  /* margin-right: 10px; */
+}
+
+.img-wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 20rpx 0rpx;
+}
+
+.one-image {
+  position: relative;
+  margin-right: 10rpx;
+}
+
+.img-choose {
+  width: 210rpx;
+  height: 210rpx;
+  background-color: #f0f0f0;
+}
+
+.img-delete {
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  left: 180rpx;
+  top: 4rpx;
+}
+
+.img-chooses {
+  width: 210rpx;
+  height: 210rpx;
+}

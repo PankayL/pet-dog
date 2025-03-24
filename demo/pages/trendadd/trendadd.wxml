@@ -1,0 +1,36 @@
+<!--pages/trendadd/trendadd.wxml-->
+<navigation-bar title="宠 享 汇" back="{{true}}" color="white" background="#FFB408" style="position:{{isNavBarFixed}}; z-index: 1000; width: 100%; font-weight: normal"></navigation-bar>
+<div wx:if="{{isPlaceholder}}" style="height: 85px; color: #FFB408;"></div>
+
+<view class="add-box">
+    <text bind:tap="publish" class="add-word">发表</text>
+    <textarea bindinput="getcontent" placeholder="这一刻想法..." name="" id="" cols="30" row="10" maxlength="-1"></textarea>
+
+    <block>
+        <view class="img-wrap">
+            <view class="one-image" wx:for="{{list}}" wx:key="index"> 
+                <image src="{{item}}" show-menu-by-longpress="true" mode="widthFix" class="img-choose" bind:tap="scanImage" data-src="{{item}}"></image>
+                <image src="/icon/trend/delete.png" class="img-delete" data-src="{{item}}" bindtap="deleteImages"></image>
+            </view>
+            <view class="one-image">
+                <image src="/icon/trend/add.png" class="img-choose" bind:tap="chooseImage"></image>
+            </view>
+        </view>
+    </block>
+
+    <!-- <block>
+        <view class="img-wrap">
+            <view class="one-image" wx:for="{{list}}" wx:key="index"> 
+                <image src="{{item}}" class="onesimag" bindtap="scanImage" data-src="{{item}}"></image>
+                <image src="/icon/trend/delete.png" class="img-delete" data-src="{{item}}" bindtap="deleteimages"></image>
+            </view>
+            <view class="one-image">
+                <image src="/icon/trend/add.png" class="add-image" bind:tap="chooseImage"></image>
+            </view>
+        </view>
+    </block> -->
+
+    <!-- <image bindtap="scanImage" data-index="index" class="onesimag" show-menu-by-longpress="true" mode="widthFix" style="width: 30%; margin-right: 10rpx;" wx:key="index" wx:for="{{list}}" src="{{item}}"></image>
+    <image wx:if="{{list.length < 9}}" bindtap="chooseImage" mode="widthFix" class="add-image" src="/icon/trend/add.png"></image> -->
+
+</view>

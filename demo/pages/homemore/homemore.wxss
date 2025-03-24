@@ -1,0 +1,95 @@
+/* pages/homemore/homemore.wxss */
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #F8F8F8;
+  /* 设置页面的背景颜色 */
+  overflow-x: hidden;
+}
+
+/* 
+The uppermost region
+ */
+.top-container {
+  /* 设置轮播图所在区域的背景渐变颜色，从上到下 */
+  background: linear-gradient(to bottom, #FFB408, #F8F8F8);
+  /* background: linear-gradient(to bottom, #FF69B4, #EECDA3); */
+  height: 750rpx;
+  margin: -1px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #F8F8F8;
+  padding: 8px;
+  border-radius: 15px;
+  margin: 15px;
+  height: 15px;
+  width: 85%;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  margin-left: 15px;
+  margin-right: 8px;
+  /* background-color: #FFB408; */
+}
+
+.search-icon {
+  width: 15px;
+  height: 15px;
+  margin-left: 10px;
+}
+
+/* pages/lost-dogs/lost-dogs.wxss */
+.card-container {
+  padding: 10px;
+  height: 180px;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.card-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  margin-top: 10rpx;
+  font-size: 14px;
+  font-weight: bold;
+  /* line-height: 1.2; */
+}
+
+.card-description {
+  margin-top: 10rpx;
+  font-size: 12px;
+  color: #666;
+}
+
+.card-location,
+.card-contact {
+  margin-top: 5rpx;
+  font-size: 12px;
+  color: #333;
+}

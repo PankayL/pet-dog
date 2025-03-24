@@ -1,0 +1,111 @@
+<!--pages/home/home.wxml-->
+<navigation-bar title="舒 心 宠 居" back="{{false}}" color="white" background="#FF69B4" style="position:{{isNavBarFixed}}; z-index: 1000; width: 100%;"></navigation-bar>
+<div wx:if="{{isPlaceholder}}" style="height: 85px; color: #FF69B4;"></div>
+
+<view class="top-container">
+  <!-- 搜索框 -->
+  <view class="search-container">
+    <image class="search-icon" src="{{searchImageUral}}"></image>
+    <input class="search-input" placeholder="请输入搜索内容" bindinput="onInput" />
+    <!-- <image class="search-icon" src="/images/search-icon.png" /> -->
+  </view>
+  
+  <!-- 轮播图 -->
+  <swiper class="swiper-container" previousMargin="20px" nextMargin="20px" circular="{{true}}" autoplay="{{true}}" interval="{{4000}}" duration="{{800}}">
+    <block wx:for="{{slideshowImageUrls}}" wx:key="index">
+      <swiper-item>
+        <view class="swiper-item-content">
+            <image class="swiper-image" src="{{item}}"></image>
+        </view>
+        </swiper-item>
+    </block>
+    <!-- <swiper-item>
+      <view class="swiper-item-content">
+        <view class="rounded-rectangle" style="background-color: rgba(255, 255, 255, 0.7)"></view>
+      </view>
+    </swiper-item> -->
+  </swiper>
+  
+  <!-- 每日提示 -->
+  <view class="rectangle-tip-container">
+    <image class="left-image" src="{{tipsImageUral}}"></image>
+    
+    <swiper class="tips-swiper-container" vertical="{{true}}" interval="2000" duration="500" circular="{{true}}" autoplay="{{true}}">
+        <block wx:for="{{dailyTips}}" wx:key="index">
+            <swiper-item>
+                <view class="tips-swiper-item-content">
+                    <navigator url="/pages/hometips/hometips?id={{item.id}}" style="color: black;">{{item.title}}</navigator>
+                </view>
+            </swiper-item>
+        </block>
+    </swiper>
+  </view>
+
+  <!-- 按钮 -->
+  <view class="button-container">
+    <view class="button-row" style="margin-left: -1px;">
+        <block wx:for="{{buttonImageUrals}}" wx:key="index" class="button-wrapper" style="margin-left: 10px;">
+            <button class="button" style="width: 70px; margin-left: 20rpx;" bind:tap="goButton" data-url="{{item.url}}">
+                <image src="{{item.image}}" class="button-image" style="margin-top: 5px; margin-left: -15px;"></image>
+                <text class="button-text" style="margin-left: -12px; margin-top: 100px;">{{item.text}}</text>
+            </button>
+        </block>
+    </view>
+  </view>
+
+  <!-- 话题讨论 -->
+  <view class="button-container">
+    <button style="display: flex; align-items: center; padding: 10px; background-color: white; border-radius: 5px; width: 685rpx;" bind:tap="godiscuss">
+        <!-- 左侧图片 -->
+        <image src="{{discussImageUral}}" style="width: 70px; height: 70px;"></image>
+  
+        <!-- 右侧部分 -->
+        <view style="flex: 1; padding-left: 10px; text-align: left;">
+            <!-- 上部文字描述 -->
+            <text style="font-weight: normal; font-size: 14px;">#狗狗日常行为 ~
+            </text>
+            <!-- 中部文字描述 -->
+            <rich-text>
+                <text style="font-weight: normal; font-size: 12px; color: gray; line-height: 1.2;">狗狗热情友好，随时带来欢乐与陪伴！
+                </text>
+            </rich-text>
+            
+            <!-- 下部文字描述 -->
+            <text style="font-size: 12px; color: hotpink; font-weight: normal;">讨论 345 人数 180
+            </text>
+        </view>
+    </button>
+  </view>
+
+  <!-- 显示内容 -->
+  <view style="display: flex; justify-content: space-between; margin-top: 25rpx;">
+    <text style="font-size: 13px; margin-left: 40rpx;">等待领养：</text>
+    <button style="color: gray; font-size: 11px; margin-right: 40rpx; margin-top: 5rpx; width: 100rpx; padding: 0; font-weight: normal; color: gray;" bind:tap="goToMore">查看更多</button>
+  </view>
+  <view class="display-container" style="margin-top: 20rpx;">
+    <view class="container" style="margin-top: -400rpx;">
+        <block wx:for="{{cardData}}" wx:key="index">
+            <view class="row">
+                <block wx:for="{{item}}" wx:key="index">
+                    <view class="card">
+                        <image src="{{item.image}}" class="image"></image>
+                        <view class="text">
+                            <view class="name">{{item.name}}</view>
+                            <view class="labels-container">
+                                <block wx:for="{{item.label}}" wx:key="index">
+                                    <view class="label" style="background-color: {{item.color}};">{{item.text}}</view>
+                                </block>
+                            </view>
+                            <view class="region">{{item.region}}</view>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </block>
+    </view>
+  </view>
+  <view style="height: 20px;"></view>
+</view>
+
+
+

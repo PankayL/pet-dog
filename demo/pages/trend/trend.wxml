@@ -1,0 +1,126 @@
+<!--pages/trend/trend.wxml-->
+<navigation-bar title="宠 享 汇" back="{{false}}" color="white" background="#FFB408" style="position:{{isNavBarFixed}}; z-index: 1000; width: 100%; font-weight: normal; margin-top: {{heighthead}}px; transition: margin-top 0.15s;"></navigation-bar>
+<div wx:if="{{isPlaceholder}}" style="height: 85px; color: #FFB408;"></div>
+
+<!-- 搜索框 -->
+<view style="width: 100%; height: 60px; background-color: rgba(255, 255, 255, 0.5); display: flex; flex-direction: column; justify-content: center;">
+    <view style="height: 1px;"></view>
+    <view class="search-container" style="background-color: rgba(245, 248, 255, 0.5); margin-left: 20px;">
+        <image class="search-icon" src="{{searchImageUral}}"></image>
+        <input class="search-input" placeholder="聊天信息/查人" bindinput="onInput" />
+        <!-- <image class="search-icon" src="/images/search-icon.png" /> -->
+        <image style="width: 18px; height: 18px;" bindtap="goTrendadd" class="search-icon" src="{{addImageUral}}"></image>
+    </view>
+    <view style="height: 1px;"></view>
+</view>
+
+<view style="height: 170px;">
+    <!-- 朋友圈动态 -->
+    <view class="list" wx:for="{{posts}}" wx:key="index">
+        <view class="item">
+            <view class="content-box">
+                <!-- 用户头像 -->
+                <view class="left">
+                    <image mode="aspectFill" src="{{item.avatar}}" class="avimage"></image>
+                </view>
+                <!-- 动态内容 -->
+                <view class="right">
+                    <!-- 用户昵称 -->
+                    <view class="nickName">{{item.nickname}}</view>
+                    <!-- 发布内容 -->
+                    <view class="content">{{item.content}}</view>
+                    <!-- 图片 -->
+                    <view class="img-boxs">
+                        <block wx:if="{{item.imgList.length == 1}}">
+                            <image show-menu-by-longpress="true" mode="widthFix" bind:tap="scanImage" data-src="{{item}}" data-urls="{{item.imgList}}" class="oneImag" src="{{item.imgList[0]}}"></image>
+                        </block>
+                        <block wx:if="{{item.imgList.length >= 2}}">
+                            <image show-menu-by-longpress="true" mode="widthFix" style="width: {{item.imgList.length == 4 ? '33%' : '31%'}}" wx:for-item="itimage" wx:for="{{item.imgList}}" class="onesimag" src="{{itimage}}" bind:tap="scanImage" data-src="{{itimage}}" data-urls="{{item.imgList}}"></image>
+                        </block>
+                    </view>
+                    <!-- 视频 -->
+                    <view class="video" wx:if="{{item.video}}">
+                        <video style="width: 100%; height: 100%" object-fit="contain" play-btn-position="center" show-mute-btn="true" src="{{item.video}}"></video>
+                    </view>
+                    <!-- 时间 删除按钮 评论点赞功能选择 -->
+                    <view class="time-del-box">
+                        <view class="left">
+                            <view class="time">{{item.time}}</view>
+                            <view class="delete" bind:tap="delete" data-index="{{index}}">删除</view>
+                        </view>
+                        <view class="meau-box">
+                            <view class="meau-list" wx:if="{{meaushow == index}}">
+                                <view class="prize">
+                                    <van-icon name="like-o"></van-icon>
+                                    <!-- <van-icon name="like" style="color: red;"></van-icon> -->
+                                    <view class="word">点赞</view>
+                                </view>
+                                <view class="prize" bind:tap="openPopup">
+                                    <van-icon name="comment-o" />
+                                    <view class="word">评论</view>
+                                </view>
+                            </view>
+                            <view class="meau" bind:tap="showMeau" data-index="{{index}}">...</view>
+                        </view>
+                    </view>
+                    <!-- 点赞和评论 -->
+                    <view class="priandping" wx:if="{{item.prizeList.length}} || {{item.pingList.length}}">
+                        <!-- 点赞列表 -->
+                        <view class="prize-box" wx:if="{{item.prizeList.length}}">
+                            <image class="iconImage" src="/icon/trend/prize.png"></image>
+                            <text class="prize-item" wx:for-item="itemsprize" wx:for="{{item.prizeList}}" wx:for-index="indexPrize">{{itemsprize}}{{indexPrize==item.prizeList.length-1 ? '' : '，'}}</text>
+                            <!-- <view wx:if="{{item.pingList.length}}">
+                                <view style="border-bottom: 1rpx solid #CCCCCC; margin-top: 10rpx; margin-bottom: 10rpx;"></view>
+                            </view> -->
+                        </view>
+                        <!-- 评论列表 -->
+                        <view style="margin-top: 6rpx;" class="ping-box" wx:if="{{item.pingList.length}}" wx:for="{{item.pingList}}" wx:for-item="itempin">
+                            <text style="font-size: 15px;" wx:if="{{itempin.flag == 0}}" class="nickName">{{itempin.nickName}}: </text>
+                            <text style="font-size: 15px;" wx:if="{{itempin.flag == 1}}" class="nickName">{{itempin.nickName1}}</text>
+                            <text style="font-size: 15px;" wx:if="{{itempin.flag == 1}}">回复</text>
+                            <text style="font-size: 15px;" wx:if="{{itempin.flag == 1}}" class="nickName">{{itempin.nickName2}}: </text>
+                            <text class="content">{{itempin.content}}</text>
+                        </view>
+                    </view>
+                </view> 
+            </view>
+            <!-- 动态之间的分割线 -->
+            <view class="footer"></view>
+        </view>
+    
+    </view>
+
+</view>
+
+<!-- 底部弹出 -->
+<van-popup show="{{showPopup}}" position="bottom" custom-class="custom-popup" bind:close="onPopupClose">
+    <view class="input-row">
+      <input
+        type="text"
+        placeholder="请输入内容..."
+        auto-focus="{{showPopup}}"
+        class="input-field" style="margin-bottom: 30rpx;"
+        bindfocus="onInputFocus" bindblur="onInputBlur"
+      />
+      <button bindtap="closePopup" style="width: 120rpx; height: 60rpx; padding: 0rpx; background-color: #03CE5F; color: white; font-size: 25rpx; display: flex; justify-content: center; align-items: center; margin-bottom: 30rpx;">确认</button>
+    </view>
+</van-popup>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

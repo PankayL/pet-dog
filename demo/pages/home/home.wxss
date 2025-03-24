@@ -1,0 +1,256 @@
+/* pages/home/home.wxss */
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #F8F8F8;
+  /* 设置页面的背景颜色 */
+  overflow-x: hidden;
+}
+
+/* 
+The uppermost region
+ */
+.top-container {
+  /* 设置轮播图所在区域的背景渐变颜色，从上到下 */
+  background: linear-gradient(to bottom, #FF69B4, #F8F8F8);
+  /* background: linear-gradient(to bottom, #FF69B4, #EECDA3); */
+  height: 750rpx;
+  margin: -1px;
+}
+
+/* 
+search box
+ */
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #FFF;
+  padding: 8px;
+  border-radius: 15px;
+  margin: 15px;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  margin-left: 15px;
+  margin-right: 8px;
+}
+
+.search-icon {
+  width: 15px;
+  height: 15px;
+  margin-left: 10px;
+}
+
+/* 
+Testing carousel graphs
+*/
+.swiper-container {
+  padding: 0;
+  height: 155px;
+}
+
+.swiper-image {
+  height: 125px;
+  width: 95%;
+  border-radius: 10px;
+}
+
+.swiper-item-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rounded-rectangle {
+  width: 95%;
+  height: 120px;
+  background-color: #FFF;
+  /* 设置矩形颜色 */
+  border-radius: 10px;
+  /* 设置弧度，调整这个值来改变弧度大小 */
+}
+
+/* 
+tips
+ */
+.rectangle-tip-container {
+  /* display: flex; */
+  justify-content: space-between;
+  /* 左右两边对齐 */
+  align-items: center;
+  /* 上下居中 */
+  height: 40px;
+  width: 685rpx;
+  background-color: white;
+  border-radius: 8px;
+  margin-left: 35rpx;
+  margin-top: -30rpx;
+}
+
+.left-image {
+  width: 140rpx;
+  height: 70rpx;
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+}
+
+.right-text {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.tips-swiper-container {
+  height: 30px;
+  margin-top: -87rpx;
+  margin-left: 165rpx;
+}
+
+.tips-swiper-item-content {
+  display: flex;
+  margin-top: 25rpx;
+  justify-content: left;
+  font-size: small;
+}
+
+/* .right-content {
+  flex: 1;
+  margin-left: 20px;
+}
+.text-content {
+  font-size: 16px;
+  margin-bottom: 10px;
+  cursor: pointer;
+} */
+/* 
+button
+*/
+.button-container {
+  display: flex;
+  /* flex-wrap: wrap; */
+  /* justify-content: space-around; */
+  flex-direction: column;
+  align-items: center;
+  height: 190rpx;
+  width: 685rpx;
+  background-color: white;
+  border-radius: 8px;
+  margin-left: 35rpx;
+  margin-top: 30rpx;
+}
+
+.button-row {
+  display: flex;
+  margin-left: -15px;
+}
+
+.button-wrapper {
+  margin: 10px;
+}
+
+.button {
+  /* display: flex; */
+  /* flex-direction: column;  */
+  /* align-items: center;  */
+  /* justify-content: center;  */
+  width: 80px;
+  height: 80px;
+  margin-top: 5rpx;
+  background-color: white;
+}
+
+.button-image {
+  width: 40px;
+  height: 40px;
+  margin-top: 5rpx;
+}
+
+.button-text {
+  font-size: 13px;
+  margin-left: 5px;
+  margin-top: 5px;
+  font-weight: normal;
+}
+
+/* 
+display
+*/
+.display-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1690rpx;
+  width: 685rpx;
+  background-color: #F8F8F8;
+  border-radius: 8px;
+  margin-left: 35rpx;
+  margin-top: 30rpx;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.card {
+  width: 155px;
+  /* border: 1px solid #ccc; */
+  border-radius: 5px;
+  overflow: hidden;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: white;
+}
+
+.image {
+  width: 175px;
+  height: 175px;
+  object-fit: cover;
+}
+
+.text {
+  padding: 10px;
+}
+
+.name {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.labels-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 8px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 9px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  height: 3px;
+  width: 20px;
+  margin-right: 5px;
+}
+
+.region {
+  margin-top: 5px;
+  font-size: 10px;
+  color: gray;
+}

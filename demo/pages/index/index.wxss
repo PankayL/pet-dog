@@ -1,0 +1,172 @@
+/**index.wxss**/
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* background-color: #FFFFFF; */
+}
+
+.top-container {
+  /* 设置轮播图所在区域的背景渐变颜色，从上到下 */
+  background: linear-gradient(to bottom, #5CC453, #F8F8F8);
+  /* background: linear-gradient(to bottom, #FF69B4, #EECDA3); */
+  height: 750rpx;
+  margin: -1px;
+}
+
+/* personal_page.wxss */
+.container {
+  padding: 20px;
+  background-color: #FFFFFF;
+  display: flex;
+  /* flex-wrap: wrap; */
+  /* justify-content: space-around; */
+  flex-direction: column;
+  align-items: center;
+  height: 240rpx;
+  width: 685rpx;
+  background-color: white;
+  border-radius: 8px;
+  margin-left: 35rpx;
+  margin-top: 30rpx;
+}
+
+.buttom-container {
+  display: flex;
+  /* flex-wrap: wrap; */
+  /* justify-content: space-around; */
+  flex-direction: column;
+  align-items: center;
+  height: 520rpx;
+  width: 685rpx;
+  background-color: white;
+  border-radius: 8px;
+  margin-left: 35rpx;
+  margin-top: 30rpx;
+}
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 0px solid #eee;
+  margin-left: 10rpx;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.value {
+  color: #1c1c1c;
+  cursor: pointer;
+  margin-right: 210rpx;
+  margin-bottom: 20rpx;
+  font-size: 20px;
+  width: 250rpx;
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 40rpx;
+  margin-left: 40rpx;
+  margin-bottom: 35rpx;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+}
+
+.value-grender {
+  margin-top: -30rpx;
+}
+
+.value-grender .gender-img {
+  width: 45rpx;
+  height: 44rpx;
+  margin-top: 10rpx;
+}
+
+.value-location {
+  color: #FFFFFF;
+  font-size: 12px;
+}
+
+.section-grender {
+  margin-top: 40rpx;
+  margin-left: -20rpx;
+}
+
+.value-grender-no {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10%;
+  padding: 0px 0;
+  background-color: #5CC453;
+  margin-top: -40rpx;
+  margin-left: 20rpx;
+  margin-bottom: 5rpx;
+  height: 45rpx;
+  width: 100rpx;
+  color: #FFFFFF;
+}
+
+.value-location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10%;
+  padding: 0px 0;
+  background-color: #5CC453;
+  margin-top: -40rpx;
+  margin-left: 20rpx;
+  margin-bottom: 5rpx;
+  height: 45rpx;
+  width: 100rpx;
+}
+
+/* 卡片 */
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* 确保容器占满整个屏幕 */
+  flex-direction: column;
+}
+
+.card {
+  background-color: lightgray;
+  border: 0px solid gray;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  width: 130px;
+  height: 60px;
+  border-radius: 10%;
+}
+
+.card-top {
+  display: flex; 
+  align-items: center;
+  margin-top: -80rpx;
+}
+
+.card-bottom {
+  display: flex; 
+  align-items: center;
+}
+
+.card-left {
+  align-self: flex-start; /* 对齐到容器的左侧 */
+}
+
+.card-right {
+  align-self: flex-end; /* 对齐到容器的右侧 */
+}
+

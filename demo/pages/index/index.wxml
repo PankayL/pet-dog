@@ -1,0 +1,102 @@
+<!--index.wxml-->
+<navigation-bar title="宠 缘 台" back="{{false}}" color="white" background="#5CC453"></navigation-bar>
+
+<!-- personal_page.wxml -->
+<view class="top-container">
+  <view class="container">
+    <!-- Avatar Section -->
+    <view style="display: flex; align-items: center;">
+      <view class="section">
+        <view class="avatar" bindtap="changeAvatar">
+          <image src="{{userInfo.avatarUrl}}" mode="aspectFill" class="avatar-img" />
+        </view>
+      </view>
+
+      <!-- Nickname Section -->
+      <view style="margin-top: 20rpx;">
+        <view class="section">
+          <view class="value" bindtap="editNickname">{{userInfo.nickName}}</view>
+        </view>
+
+        <view style="display: flex;  align-items: center; margin-right: 40rpx;">
+          <!-- Gender Section -->
+          <view class="section">
+            <view class="value-grender" bindtap="editGender">
+              <image class="gender-img" wx:if="{{userInfo.gender == 1}}" src="/icon/mine/boy.png" />
+              <image class="gender-img" wx:if="{{userInfo.gender == 2}}" src="/icon/mine/girl.png" />
+              <view class="section-grender">
+                <text class="value-grender-no" wx:if="{{userInfo.gender == 3}}" style="font-size: 12px;">性别</text>
+              </view>
+
+            </view>
+          </view>
+
+          <!-- Location Section -->
+          <!-- <view class="section-location">
+            <view class="value-location" bindtap="onChooseLocation">{{userInfo.region}}</view>
+          </view> -->
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+
+  <view class="buttom-container">
+    <view class="card-container">
+      <view class="card-top">
+        <view class="card card-left" style="background-color: #FFF6ED;">
+          <view style="display: flex; justify-content: flex-start; align-items: flex-start;">
+            <view style="margin-top: 15rpx; margin-bottom: 300rpx; margin-left: 0%; width: 400rpx;">
+              <text style="font-weight: normal;">送养</text>
+              <view style="margin-top: 10rpx;">
+                <text style="font-weight: 550;">0</text>
+                <text style="font-size: 11px;">发布</text>
+              </view>
+            </view>
+            <image></image>
+          </view>
+        </view>
+        <view class="card card-right" style="background-color: #FDF4F5;">
+          <view style="display: flex; justify-content: flex-start; align-items: flex-start;">
+            <view style="margin-top: 15rpx; margin-bottom: 300rpx; margin-left: 0%; width: 400rpx;">
+              <text style="font-weight: normal;">领养</text>
+              <view style="margin-top: 10rpx;">
+                <text style="font-weight: 550;">0</text>
+                <text style="font-size: 11px;">发布</text>
+              </view>
+            </view>
+            <image></image>
+          </view>
+        </view>
+      </view>
+      <view class="card-bottom">
+        <view class="card card-left" style="background-color: #FEF0FF;">
+          <view style="display: flex; justify-content: flex-start; align-items: flex-start;">
+            <view style="margin-top: 15rpx; margin-bottom: 300rpx; margin-left: 0%; width: 400rpx;">
+              <text style="font-weight: normal;">动态</text>
+              <view style="margin-top: 10rpx;">
+                <text style="font-weight: 550;">5</text>
+                <text style="font-size: 11px;">发布</text>
+              </view>
+            </view>
+            <image></image>
+          </view>
+        </view>
+        <view class="card card-right" style="background-color: #EBF5FE;">
+          <view style="display: flex; justify-content: flex-start; align-items: flex-start;">
+            <view style="margin-top: 15rpx; margin-bottom: 300rpx; margin-left: 0%; width: 400rpx;">
+              <text style="font-weight: normal;">订单</text>
+              <view style="margin-top: 10rpx;">
+                <text style="font-weight: 550;">0</text>
+                <text style="font-size: 11px;">购买</text>
+              </view>
+            </view>
+            <image></image>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>

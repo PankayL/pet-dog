@@ -1,0 +1,3 @@
+<!--pages/homeentertainment/homeentertainment.wxml-->
+<navigation-bar title="娱 乐" back="{{true}}" color="white" background="#FF69B4" style="position:{{isNavBarFixed}}; z-index: 1000; width: 100%;"></navigation-bar>
+<div wx:if="{{isPlaceholder}}" style="height: 85px; color: #FF69B4;"></div>

@@ -1,0 +1,84 @@
+/* pages/shopclassify/shopclassify.wxss */
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #F8F8F8;
+  /* 设置页面的背景颜色 */
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.category {
+  width: 25%;
+  /* background-color: #e0f2f1; */
+  /* 淡蓝色背景 */
+}
+
+.category-scroll {
+  height: 100vh;
+  /* 左侧商品类别滚动区域高度 */
+}
+
+.category-item {
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.category-item:hover {
+  background-color: #b2dfdb;
+  /* 鼠标悬停时的背景色 */
+}
+
+.products {
+  width: 75%;
+}
+
+.products-scroll {
+  height: 100vh;
+  /* 右侧商品卡片滚动区域高度 */
+}
+
+.product-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.product-image {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-name {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.product-price {
+  color: #e51c23;
+  /* 商品价格颜色 */
+}
+
+.input-container {
+  position: fixed;
+  /* 固定在屏幕底部 */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #f8f8f8;
+  padding: 10px;
+  display: flex;
+  transition: margin-bottom 3s;
+}

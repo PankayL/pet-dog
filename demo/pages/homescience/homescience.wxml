@@ -1,0 +1,49 @@
+<!--pages/homescience/homescience.wxml-->
+<navigation-bar title="科 普" back="{{true}}" color="white" background="#FF69B4" style="position:{{isNavBarFixed}}; z-index: 1000; width: 100%; margin-top: {{heighthead}}px; transition: margin-top 0.15s;"></navigation-bar>
+<div wx:if="{{isPlaceholder}}" style="height: 85px; color: #FF69B4;"></div>
+
+<view class="container" style="background-image: url({{background_}});">
+  <button class="action-button" style="margin-bottom: 50rpx;" bind:tap="openPopup">狗狗百科</button>
+  <button class="action-button" bindtap="goToDogRecognizer" style="margin-bottom: 250rpx;">拍照识狗</button>
+</view>
+
+<!-- 底部弹出 -->
+<van-popup show="{{showPopup}}" position="bottom" custom-class="custom-popup" bind:close="onPopupClose">
+  <view class="input-row">
+    <input type="text" placeholder="请输入内容..." auto-focus="{{showPopup}}" class="input-field" style="margin-bottom: 30rpx;" bindfocus="onInputFocus" bindblur="onInputBlur" />
+    <button bindtap="closePopup" style="width: 120rpx; height: 60rpx; padding: 0rpx; background-color: #03CE5F; color: white; font-size: 25rpx; display: flex; justify-content: center; align-items: center; margin-bottom: 30rpx;">确认</button>
+  </view>
+</van-popup>
+
+<!-- 固定在底部的输入框 -->
+<!-- <view class="show-container" wx:if="{{petDog.name}}" wx:catchtap="hidePetInfo">
+    
+</view> -->
+
+<!-- 底部弹出 -->
+<van-popup show="{{showPopupInfor}}" position="bottom" custom-class="custom-popup" bind:close="onPopupClose">
+  <view class="pet-info">
+    <view class="avatar-info">
+      <image src="{{petDog.url}}" mode="aspectFill" class="avatar"></image>
+      <view class="name">{{petDog.name}}</view>
+      <view class="detail">{{petDog.variety}} | {{petDog.character}}</view>
+    </view>
+    <view class="attribute">
+      <view class="item">
+        <text class="label">需求</text>
+        <view class="value">{{petDog.demand}}</view>
+      </view>
+      <view class="divider"></view>
+      <view class="item">
+        <text class="label">护理</text>
+        <view class="value">{{petDog.healthcare}}</view>
+      </view>
+      <view class="divider"></view>
+      <view class="item">
+        <text class="label">适家</text>
+        <view class="value">{{petDog.familyFriendly}}</view>
+      </view>
+      <view style="height: 300rpx;"></view>
+    </view>
+  </view>
+</van-popup>

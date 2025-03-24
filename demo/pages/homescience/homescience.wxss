@@ -1,0 +1,126 @@
+/* pages/homescience/homescience.wxss */
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #F8F8F8;
+  /* 设置页面的背景颜色 */
+  overflow-x: hidden;
+}
+
+/* 设置页面全屏和居中 */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-size: cover;
+  flex-direction: column;
+}
+
+/* 按钮样式 */
+.action-button {
+  background-color: #FF69B4;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 10px;
+  margin: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.action-button:hover {
+  background-color: #FF69B4;
+  transform: scale(1.1);
+}
+
+/* 弹出popup */
+.custom-popup {
+  padding: 20rpx;
+  background-color: #ffffff;
+  /* 设置弹出层的背景颜色 */
+  border-top-left-radius: 10rpx;
+  /* 为弹出层设置一些圆角 */
+  border-top-right-radius: 10rpx;
+}
+
+.input-row {
+  display: flex;
+  /* 使用 Flexbox 布局 */
+  align-items: center;
+  /* 垂直居中对齐 */
+  padding: 10rpx;
+  /* 给输入行添加一些内边距 */
+}
+
+.input-field {
+  flex: 1;
+  /* 输入框占用所有可用空间 */
+}
+
+/* 在需要的位置引入样式 */
+.pet-info {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx;
+}
+
+.avatar-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.avatar {
+  margin-top: 50rpx;
+  width: 240rpx;
+  height: 240rpx;
+  border-radius: 0%;
+  margin-bottom: 10rpx;
+}
+
+.name {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.detail {
+  font-size: 30rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+}
+
+.attribute {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12rpx;
+}
+
+.label {
+  font-size: 28rpx;
+  color: #999;
+  width: 100rpx;
+  line-height: 62rpx;
+}
+
+.value {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 62rpx;
+}
+
+.divider {
+  height: 1px;
+  background-color: #ccc;
+  margin: 6rpx 0;
+}

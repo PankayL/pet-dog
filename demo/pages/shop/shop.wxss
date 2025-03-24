@@ -1,0 +1,242 @@
+/* pages/shop/shop.wxss */
+  page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #F8F8F8; /* 设置页面的背景颜色 */
+    overflow-x: hidden;
+  }
+  /* 
+  The uppermost region
+   */
+  .top-container {
+    /* 设置轮播图所在区域的背景渐变颜色，从上到下 */
+    background: linear-gradient(to bottom, #00AEFF, #F8F8F8);
+    /* background: linear-gradient(to bottom, #FF69B4, #EECDA3); */
+    height: 750rpx;
+    margin: -1px;
+  }
+  /* 
+  search box
+  */
+  .search-container {
+    display: flex;
+    align-items: center;
+    background-color: #FFF;
+    padding: 8px;
+    border-radius: 15px;
+    margin: 15px;
+  }
+  .search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    margin-left: 15px;
+    margin-right: 8px;
+  }
+  .search-icon {
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+  }
+  /* 
+  button
+  */
+  .button-container {
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* justify-content: space-around; */
+    flex-direction: column;
+    align-items: center;
+    height: 190rpx;
+    width: 685rpx;
+    background-color: white;
+    border-radius: 8px;
+    margin-left: 35rpx;
+    margin-top: 30rpx;
+  }
+  .button-row {
+    display: flex;
+    margin-left: -15px;
+  }
+  .button-wrapper {
+    margin: 10px;
+  }  
+  .button {
+    /* display: flex; */
+    /* flex-direction: column;  */
+    /* align-items: center;  */
+    /* justify-content: center;  */
+    width: 80px;
+    height: 80px; 
+    margin-top: 5rpx;
+    background-color: white;
+  }  
+  .button-image {
+    width: 40px;
+    height: 40px;
+    margin-top: 5rpx;
+  }  
+  .button-text {
+    font-size: 13px;
+    margin-left: 5px;
+    margin-top: 5px;
+    font-weight: normal;
+  }
+
+  /* 特价专区 */
+  .button-special-overall {
+    width: 120rpx;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+  }
+  .swiper {
+    width: 100%;
+    height: 200px; /* 设置轮播图高度 */
+  }
+  
+  .page {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .image-container {
+    margin-top: 10px;
+    position: relative;
+    /* margin-right: 3%; */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .image {
+    width: 65px;
+    height: 65px;
+    border-radius: 3px;
+  }
+  
+  .text-container {
+    /* position: absolute; */
+    bottom: 0;
+    right: 0;
+    background-color: rgba(255, 0, 0, 0.5); /* 设置文字背景色 */
+    color: white;
+    padding: 6px;
+    height: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+  }
+  
+  .info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 垂直居中 */
+}
+
+  .text {
+    font-size: 10px;
+  }
+
+  .name {
+    font-size: 10px;
+    font-weight: normal;
+    margin-top: 4px;
+    margin-bottom: -5px;
+}
+  
+  .price {
+    font-size: 11px;
+    margin-right: 5px; /* 添加间距 */
+    color: red;
+  }
+
+  .original-price {
+    font-size: 9px;
+    color: gray; /* 设置原价颜色为灰色 */
+    margin-top: 5px; /* 调整原价和价格之间的间距 */
+    position: relative;
+}
+
+.original-price::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: gray; /* 设置斜线颜色为灰色 */
+}
+  
+
+/* 筛选按钮 */
+  .button-container-1 {
+    white-space: nowrap;
+    background-color: white;
+    /* border-radius: 8px; */
+    margin-top: 30rpx;
+    width: 95%;
+    padding: 10px;
+    margin-bottom: -3px;
+  }
+  
+  .button-item {
+    display: inline-block;
+    padding: 0rpx;
+    line-height: 25px;
+    color: #000;
+  }
+  
+  .button-item.active {
+    color: #00AEFF;
+  }
+
+  .display-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  
+  .merchandise-card {
+    width: calc(50% - 35px);
+    height: 220px;
+    /* border: 1px solid #ccc; */
+    border-radius: 5px;
+    overflow: hidden;
+    margin-left: 30px;
+    margin-right: -20px;
+    margin-top: 10px;
+    background-color: white;
+  }
+  
+  .merchandise-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+  
+  .merchandise-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .merchandise-name {
+    font-size: 12px;
+    margin-top: 10px;
+    text-align: center; /* 居中显示 */
+  }
+  
+  .merchandise-price {
+    font-size: 12px;
+    color: red;
+    margin-top: 5px; /* 价格与名称间距 */
+    margin-left: 10px;
+  }
+  

@@ -1,0 +1,86 @@
+/* pages/chatpage/chatpage.wxss */
+page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #F8F8F8; /* 设置页面的背景颜色 */
+    overflow-x: hidden;
+  }
+
+/* pages/chat/chat.wxss */
+.chat-container {
+    padding: 10px;
+  }
+  
+  .chat-message {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 40rpx;
+  }
+  
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* 圆形头像 */
+  }
+  
+  .message-bubble {
+    max-width: 60%;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+  }
+  
+  .left {
+    flex-direction: row; /* 左侧消息的布局 */
+  }
+  
+  .left .message-bubble {
+    background-color: white; /* 白色背景 */
+    border: 1px solid #dcdcdc;
+    margin-left: 10px;
+    margin-right: 20px;
+  }
+  
+  .right {
+    flex-direction: row-reverse; /* 右侧消息的布局 */
+  }
+  
+  .right .message-bubble {
+    background-color: #007aff; /* 蓝色背景 */
+    color: white;
+    border: 1px solid #007aff;
+    margin-right: 10px;
+    margin-left: 20px;
+  }
+
+  /* 输入框 */
+  .input-container {
+    position: fixed; /* 固定在屏幕底部 */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #f8f8f8;
+    padding: 10px;
+    display: flex;
+    transition: margin-bottom 3s;
+  }
+  
+  .chat-input {
+    flex: 1; /* 占用大部分空间 */
+    padding: 5px;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+  }
+  
+  .send-button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #007aff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  

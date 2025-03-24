@@ -1,0 +1,51 @@
+<!--pages/hometips/hometips.wxml-->
+<navigation-bar title="今 日 知 识" back="{{true}}" color="white" background="#FF69B4" style="position:{{isNavBarFixed}}; z-index: 1000; width: 100%;"></navigation-bar>
+<div wx:if="{{isPlaceholder}}" style="height: 85px; color: #FF69B4;"></div>
+
+<view class="container" style="height: 115px;">
+  <!-- 页面标题 -->
+  <view class="header">
+    <text class="title">{{contentInfo.title}}\n</text>
+    <view class="info-container">
+        <text class="info">{{formattedDate}}</text>
+    </view>
+  </view>
+</view>
+
+<view  style="height: 170px;">
+  <!-- 正文内容 -->
+  <view class="content">
+    <block wx:for="{{parsedContent}}" wx:key="index">
+      <view wx:if="{{item.type === 'text'}}">
+        <text class="textword">{{item.text}}</text>
+        <view style="height: 20rpx;"></view>
+      </view>
+      <view wx:if="{{item.type === 'h1'}}">
+        <text class="h1">{{item.text}}</text>
+      </view>
+      <view wx:if="{{item.type === 'h2'}}" style="margin-left: 0px;">
+        <text class="h2">{{item.text}}</text>
+      </view>
+      <view wx:if="{{item.type === 'h3'}}">
+        <text class="h3">{{item.text}}</text>
+      </view>
+      <view wx:if="{{item.type === 'image'}}">
+        <view style="text-align: center;">
+            <image src="{{item.url}}" mode="widthFix" class="image"></image>
+        </view>
+        
+      </view>
+    </block>
+    <view style="height: 10rpx;"></view>
+    <text class="info">阅读 {{contentInfo.count}}</text>
+    <view style="height: 180rpx;"></view>
+  </view>
+  
+</view>
+
+
+ <!-- 固定在底部的输入框 -->
+ <view class="input-container" style="height: 50rpx;">
+    <!-- <input style="margin-bottom: 40rpx;" class="chat-input" placeholder="请输入消息" value="{{inputValue}}" bindinput="onInputChange" bindfocus="onInputFocus" bindblur="onInputBlur"/>
+    <button class="send-button" bindtap="onSend" style="width: 150rpx; margin-bottom: 40rpx; margin-left: 10rpx;">发送</button> -->
+</view>

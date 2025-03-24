@@ -1,0 +1,76 @@
+/* pages/shoporder/shoporder.wxss */
+
+
+.container {
+  padding: 0px;
+  margin-top: 10rpx;
+}
+
+.filter-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.filter-option {
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #999999;
+}
+
+.filter-option.active {
+  font-size: 16px;
+  color: #000000;
+}
+
+.order-list {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-item {
+  padding: 20px;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+}
+
+.product-image {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+.order-info {
+  flex: 1;
+}
+
+.product-name {
+  font-size: 16px;
+  color: #333333;
+}
+
+.product-price {
+  font-size: 14px;
+  color: #999999;
+}
+
+.order-id {
+  font-size: 14px;
+  color: #999999;
+}
+
+.order-date {
+  font-size: 14px;
+  color: #999999;
+}
+
+.order-status {
+  font-size: 14px;
+  color: #ff9900; /* 根据订单状态显示不同的颜色 */
+}
+

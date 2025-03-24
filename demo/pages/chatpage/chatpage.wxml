@@ -1,0 +1,31 @@
+<!--pages/chatpage/chatpage.wxml-->
+<navigation-bar title="{{name}}" back="{{true}}" color="white" background="#F273FE" style="position:{{isNavBarFixed}}; z-index: 1000; width: 100%; font-weight: normal; margin-top: {{heighthead}}px; transition: margin-top 0.15s;"></navigation-bar>
+<div wx:if="{{isPlaceholder}}" style="height: 105px; color: #F273FE;"></div>
+<div wx:if="{{isPlaceholder_1}}" style="height: 260px; color: #F273FE;"></div>
+
+<!-- pages/chat/chat.wxml -->
+<view style="height: 180px;">
+    <view class="chat-container">
+        <block wx:for="{{messages}}" wx:key="*this">
+            <!-- 左侧消息 -->
+            <view class="chat-message left" wx:if="{{item.flag === 0}}">
+                <image class="avatar" src="{{item.avatar}}" />
+                <view class="message-bubble">{{item.content}}</view>
+            </view>
+            <!-- 右侧消息 -->
+            <view class="chat-message right" wx:if="{{item.flag === 1}}">
+                <image class="avatar" src="{{item.avatar}}" />
+                <view class="message-bubble">{{item.content}}</view>
+            </view>
+        </block>
+        <view style="height: 180rpx;" ></view>
+    </view>
+</view>
+
+ <!-- 固定在底部的输入框 -->
+ <view class="input-container">
+    <input style="margin-bottom: 40rpx;" class="chat-input" placeholder="请输入消息" value="{{inputValue}}" bindinput="onInputChange" bindfocus="onInputFocus" bindblur="onInputBlur"/>
+    <button class="send-button" bindtap="onSend" style="width: 150rpx; margin-bottom: 40rpx; margin-left: 10rpx;">发送</button>
+</view>
+
+

@@ -1,0 +1,31 @@
+<!--pages/shopclassify/shopclassify.wxml-->
+<navigation-bar title="商 品 分 类" back="{{true}}" color="white" background="#00AEFF" style="position:{{isNavBarFixed}}; z-index: 1000; width: 100%; font-weight: normal"></navigation-bar>
+<div wx:if="{{isPlaceholder}}" style="height: 85px; color: #00AEFF;"></div>
+
+<view class="container">
+  <view class="category">
+    <scroll-view scroll-y="{{true}}" class="category-scroll">
+      <block wx:for="{{categories}}" wx:key="index">
+        <view class="category-item" data-index="{{index}}" bindtap="switchCategory">{{item}}</view>
+      </block>
+    </scroll-view>
+  </view>
+  <view class="products">
+    <scroll-view scroll-y="{{true}}" class="products-scroll">
+      <block wx:for="{{filteredProducts}}" wx:key="index">
+        <view class="product-item">
+          <image src="{{item.image}}" class="product-image"></image>
+          <view class="product-info">
+            <view class="product-name">{{item.name}}</view>
+            <view class="product-price">{{item.price}}</view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>
+
+<view class="input-container" style="height: 50rpx;">
+    <!-- <input style="margin-bottom: 40rpx;" class="chat-input" placeholder="请输入消息" value="{{inputValue}}" bindinput="onInputChange" bindfocus="onInputFocus" bindblur="onInputBlur"/>
+    <button class="send-button" bindtap="onSend" style="width: 150rpx; margin-bottom: 40rpx; margin-left: 10rpx;">发送</button> -->
+</view>
